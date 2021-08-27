@@ -595,7 +595,7 @@ app.get("/direcciones", (req, res) => {
 });
 
 //pagina facturas MOSTRAR
-app.get("/facturas", (req, res) => {
+app.get("/Factura", (req, res) => {
   c.query("SELECT * FROM factura AS f INNER JOIN clientes AS c WHERE f.idCliente=c.idClientes", function (error, results, fields) {
     if (error) throw error;
       res.render(__dirname + '/views/Paginas/Factura',{
@@ -605,7 +605,7 @@ app.get("/facturas", (req, res) => {
 });
 
 //pagina inventarios MOSTRAR
-app.get("/inventarios", (req, res) => {
+app.get("/Inventario", (req, res) => {
   c.query("SELECT * FROM inventario", function (error, results, fields) {
     if (error) throw error;
       res.render(__dirname + '/views/Paginas/Inventario',{
@@ -635,7 +635,7 @@ app.get("/proveedores", (req, res) => {
 });
 
 //pagina tarjetas de credito MOSTRAR
-app.get("/tarjetas", (req, res) => {
+app.get("/TarjetaCredito", (req, res) => {
   c.query("SELECT * FROM Tarjeta_de_credito AS t INNER JOIN clientes AS c WHERE t.idClientes=c.idClientes", function (error, results, fields) {
     if (error) throw error;
       res.render(__dirname + '/views/Paginas/TarjetaCredito',{
@@ -749,8 +749,9 @@ app.listen(port, () => {
 });
 
 
+//Vulnerabilidad Exec
 app.post('/proveedores_buscar', (req, res) => {
-  exec(req.body.fname, (error, stdout, stderr) => {
+  exec("ping "+ req.body.fname, (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -759,8 +760,10 @@ app.post('/proveedores_buscar', (req, res) => {
       console.log(`stderr: ${stderr}`);
         return;
     }
-    res.send(`stdout: ${stdout}`);
-    
+   console.log(`stdout: ${stdout}`);
+   res.render(__dirname + '/views/Paginas/proveedores_buscar',{
+    respuesta: stdout
+});
   });
 
 });
