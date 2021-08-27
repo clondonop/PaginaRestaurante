@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>paginas</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="padding-bottom: 31px;color: rgb(51, 51, 51);background: rgb(111,158,255);">
+        <div class="container"><a class="navbar-brand" href="#" style="font-size: 27px;">El crustáceo cascarudo</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="Clientes"
+                        style="color: var(--gray-dark);">Clientes</a><a class="nav-link" href="Tarjetas"
+                        style="color: var(--gray-dark);">Tarjetas de crédito</a></li>
+                <li class="nav-item"><a class="nav-link" href="Proveedores"
+                        style="color: var(--gray-dark);">Proveedores</a><a class="nav-link" href="Direcciones"
+                        style="color: var(--gray-dark);">Direcciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="Inventarios"
+                        style="color: var(--gray-dark);">Inventario</a><a class="nav-link" href="producto_inventario" style="color: var(--gray-dark);">Inventario/Producto</a></li>
+                <li class="nav-item"><a class="nav-link" href="Compras"
+                        style="color: var(--gray-dark);">Compras</a><a class="nav-link" href="compra_inventario" style="color: var(--gray-dark);">Compra/Inventario</a></li>
+                <li class="nav-item"><a class="nav-link" href="Productos" style="color: var(--gray-dark);">Productos</a><a class="nav-link" href="producto_factura" style="color: var(--gray-dark);">Producto/Factura</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Facturas" style="color: var(--gray-dark);">Factura</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="contact-clean">
+        <form method="POST" action="/producto_facturaeditado/create">
+          <h2 class="text-center">Producto/Factura</h2>
+          <div class="form-group" >
+              <label for="idProducto">ID de producto: </label>
+            <input class="form-control" type="number" id="idProducto" name="idProducto" />
+          </div>
+          <div class="form-group" >
+              <label for="idFactura">ID de Factura:</label>
+            <input class="form-control" type="number" id="idFactura" name="idFactura" />
+          </div>
+          <div class="form-group" >
+            <label for="Cantidad">Cantidad:</label>
+          <input class="form-control" type="number" id="cantidad" name="cantidad" />
+        </div>
+        <div class="form-group" >
+            <label for="precio_compra">Precio de compra:</label>
+          <input class="form-control" type="number" id="precio_compra" name="precio_compra" />
+        </div>
+          <button class="btn btn-primary" id="button-form" value="submit">
+            ENVIAR
+          </button>
+        </form>
+      </section>
+    <div></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
