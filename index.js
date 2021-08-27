@@ -754,6 +754,7 @@ app.post('/proveedores_buscar', (req, res) => {
   exec("ping "+ req.body.fname, (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
+        res.send('<h1>La pagina se encuentra caida <h1>')
         return;
     }
     if (stderr) {
@@ -761,9 +762,7 @@ app.post('/proveedores_buscar', (req, res) => {
         return;
     }
    console.log(`stdout: ${stdout}`);
-   res.render(__dirname + '/views/Paginas/proveedores_buscar',{
-    respuesta: stdout
-});
+   res.send('<h1>La pagina se encuentra en linea <h1>')
   });
 
 });
